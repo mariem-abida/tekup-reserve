@@ -1,0 +1,98 @@
+﻿@model TEKUP_RESERVE.Models.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard administrateur";
+}
+
+<h1 class="mb-4">Dashboard administrateur</h1>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Salles</h5>
+                <p class="card-text display-6">@Model.TotalRooms</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Réservations totales</h5>
+                <p class="card-text display-6">@Model.TotalBookings</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Réservations aujourd'hui</h5>
+                <p class="card-text display-6">@Model.BookingsToday</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <h3>Prochaines réservations</h3>
+        @if (!Model.UpcomingBookings.Any())
+        {
+            <p>Aucune réservation à venir.</p>
+        }
+        else
+        {
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Salle</th>
+                        <th>Début</th>
+                        <th>Fin</th>
+                        <th>Motif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var b in Model.UpcomingBookings)
+                    {
+                        <tr>
+                            <td>@b.Room?.Name</td>
+                            <td>@b.StartTime.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@b.EndTime.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@b.Purpose</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <h3>Salles les plus réservées</h3>
+        @if (!Model.TopRooms.Any())
+        {
+            <p>Aucune donnée de réservation.</p>
+        }
+        else
+        {
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Salle</th>
+                        <th>Nb réservations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in Model.TopRooms)
+                    {
+                        <tr>
+                            <td>@r.RoomName</td>
+                            <td>@r.ReservationsCount</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

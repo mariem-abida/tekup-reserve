@@ -1,0 +1,43 @@
+﻿@model TEKUP_RESERVE.Models.Room
+
+@{
+    ViewData["Title"] = "Ajouter une salle";
+}
+
+<h1>Ajouter une salle</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" placeholder="TD, TP, Amphi, Labo..." />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Capacity"></label>
+        <input asp-for="Capacity" class="form-control" />
+    </div>
+
+    <div class="form-check">
+        <input asp-for="HasComputers" class="form-check-input" />
+        <label asp-for="HasComputers" class="form-check-label">Salle informatique (PC)</label>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="HasProjector" class="form-check-input" />
+        <label asp-for="HasProjector" class="form-check-label">Projecteur</label>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="HasAudioSystem" class="form-check-input" />
+        <label asp-for="HasAudioSystem" class="form-check-label">Système audio</label>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

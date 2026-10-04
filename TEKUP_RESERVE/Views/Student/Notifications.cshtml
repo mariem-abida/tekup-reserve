@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Notifications";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Utilisateur";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">
+                            <span class="student-nav-icon">🏠</span> Tableau de bord
+                        </a>
+                        <a asp-controller="Student" asp-action="Calendar" class="nav-link">
+                            <span class="student-nav-icon">📅</span> Calendrier
+                        </a>
+                        <a asp-controller="Student" asp-action="Notifications" class="nav-link active">
+                            <span class="student-nav-icon">🔔</span> Notifications
+                        </a>
+                        <a asp-controller="Student" asp-action="Help" class="nav-link">
+                            <span class="student-nav-icon">❓</span> Infos & aide
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Notifications</h1>
+                        <p class="text-muted mb-3">
+                            Aperçu de vos dernières notifications liées aux salles et réservations.
+                        </p>
+
+                        <div class="card p-3 shadow-sm mb-3">
+                            <strong>Changement de salle</strong>
+                            <p class="mb-1">Votre réservation de jeudi 14h est déplacée en <strong>Salle B105</strong>.</p>
+                            <span class="text-muted small">Reçu aujourd’hui à 08:30</span>
+                        </div>
+
+                        <div class="card p-3 shadow-sm mb-3">
+                            <strong>Rappel de réservation</strong>
+                            <p class="mb-1">Vous avez une réservation demain à 10h en <strong>Lab 2</strong>.</p>
+                            <span class="text-muted small">Reçu hier à 14:00</span>
+                        </div>
+
+                        <div class="card p-3 shadow-sm mb-3">
+                            <strong>Annulation</strong>
+                            <p class="mb-1">Votre réservation de lundi 16h a été annulée par l’administration.</p>
+                            <span class="text-muted small">Reçu il y a 2 jours</span>
+                        </div>
+
+                        <div class="text-muted mt-2">Fin des notifications pour le moment.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

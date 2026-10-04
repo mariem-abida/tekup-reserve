@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Créer un compte";
+}
+
+<h1>Créer un compte</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Register" method="post">
+    <div class="form-group mb-3">
+        <label>Nom complet</label>
+        <input type="text" name="fullName" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Mot de passe</label>
+        <input type="password" name="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    <a asp-action="Login" class="btn btn-link">Déjà un compte ? Se connecter</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

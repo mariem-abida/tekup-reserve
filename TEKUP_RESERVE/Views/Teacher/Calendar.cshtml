@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Planning des cours";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Enseignant";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                        <span class="badge bg-info text-dark mt-2">Enseignant</span>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Teacher" asp-action="Dashboard" class="nav-link">
+                            <span class="student-nav-icon">🎓</span> Tableau de bord
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Calendar" class="nav-link active">
+                            <span class="student-nav-icon">📅</span> Planning des cours
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Reservations" class="nav-link">
+                            <span class="student-nav-icon">🏫</span> Mes réservations
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Notifications" class="nav-link">
+                            <span class="student-nav-icon">🔔</span> Notifications
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Help" class="nav-link">
+                            <span class="student-nav-icon">❓</span> Ressources & aide
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENU -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Planning de vos cours</h1>
+                        <p class="text-muted mb-3">
+                            Vue hebdomadaire de vos séances (cours, TD, examens). Plus tard, tu pourras
+                            remplacer ces données statiques par les vraies réservations.
+                        </p>
+
+                        <div class="calendar-card mb-4">
+                            <div class="calendar-header">
+                                Semaine en cours
+                            </div>
+                            <div class="calendar-grid d-none d-md-grid">
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Lundi</div>
+                                    <div class="calendar-day-body">
+                                        <span class="badge bg-primary">C# – B201 • 08h–10h</span>
+                                        <div class="small text-muted">L2 Dev</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Mardi</div>
+                                    <div class="calendar-day-body text-muted small">Aucun cours</div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Mercredi</div>
+                                    <div class="calendar-day-body">
+                                        <span class="badge bg-success">.NET – Lab 2 • 14h–16h</span>
+                                        <div class="small text-muted">PFE</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Jeudi</div>
+                                    <div class="calendar-day-body">
+                                        <span class="badge bg-primary">Bases de données – A105 • 10h–12h</span>
+                                        <div class="small text-muted">L3 SI</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Vendredi</div>
+                                    <div class="calendar-day-body text-muted small">Aucun cours</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 mb-3">Séances à venir</h3>
+                        <div class="list-group small">
+                            <div class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-semibold">C# – L2 Dev</div>
+                                    <div class="text-muted">Lundi • 08:00–10:00 • Salle B201</div>
+                                </div>
+                                <span class="badge bg-primary rounded-pill align-self-center">Cours</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-semibold">.NET – Projet PFE</div>
+                                    <div class="text-muted">Mercredi • 14:00–16:00 • Lab 2</div>
+                                </div>
+                                <span class="badge bg-success rounded-pill align-self-center">Encadrement</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

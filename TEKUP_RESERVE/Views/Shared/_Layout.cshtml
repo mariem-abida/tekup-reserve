@@ -1,0 +1,147 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TEKUP_RESERVE.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    // Sécuriser l'accès à l'utilisateur dans le layout
+    var isAuthenticated = User?.Identity?.IsAuthenticated ?? false;
+    var layoutUserName = User?.Identity?.Name ?? "Utilisateur";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TEKUP_RESERVE</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TEKUP_RESERVE.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+            <div class="container-fluid">
+
+                <!-- LOGO / HOME -->
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/tekup-logo.png" alt="TEK-UP" class="logo-tekup me-2" />
+                    <span class="fw-bold">TEKUP RESERVE</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+
+                    <!-- LEFT MENU -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Accueil -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Accueil</a>
+                        </li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <!-- Salles (ADMIN uniquement) -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Rooms" asp-action="Index">Salles</a>
+                            </li>
+
+                            <!-- Réservations (Admin) -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Bookings" asp-action="Index">Réservations (Admin)</a>
+                            </li>
+
+                            <!-- Menu Administration -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Administration
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Rooms" asp-action="Index">Gérer les salles</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Bookings" asp-action="Index">Toutes les réservations</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Users">Gestion des utilisateurs</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="Dashboard">Dashboard</a></li>
+                                </ul>
+                            </li>
+                        }
+                        else if (isAuthenticated)
+                        {
+                            <!-- Étudiant / Enseignant -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Bookings" asp-action="Index">Mes réservations</a>
+                            </li>
+                        }
+
+                    </ul>
+
+                    <!-- RIGHT MENU : Bonjour + Connexion / Déconnexion -->
+                    <ul class="navbar-nav ms-auto">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item me-2 align-self-center">
+                                <span class="navbar-text text-white small">
+                                    Bonjour, @layoutUserName
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-outline-light btn-sm">
+                                        Déconnexion
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="btn btn-outline-light btn-sm me-2"
+                                   asp-controller="Account" asp-action="Login">
+                                    Connexion
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-light btn-sm"
+                                   asp-controller="Account" asp-action="Register">
+                                    Créer un compte
+                                </a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted mt-5">
+        <div class="container">
+            &copy; 2025 - TEKUP_RESERVE
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Calendrier";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Utilisateur";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR (même style que sur Index) -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">
+                            <span class="student-nav-icon">🏠</span> Tableau de bord
+                        </a>
+                        <a asp-controller="Student" asp-action="Calendar" class="nav-link active">
+                            <span class="student-nav-icon">📅</span> Calendrier
+                        </a>
+                        <a asp-controller="Student" asp-action="Notifications" class="nav-link">
+                            <span class="student-nav-icon">🔔</span> Notifications
+                        </a>
+                        <a asp-controller="Student" asp-action="Help" class="nav-link">
+                            <span class="student-nav-icon">❓</span> Infos & aide
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Calendrier de vos réservations</h1>
+                        <p class="text-muted mb-3">
+                            Visualisez vos prochains créneaux de salle. Plus tard on pourra lier ceci à la vraie base de données.
+                        </p>
+
+                        <div class="calendar-card mb-4">
+                            <div class="calendar-header">
+                                Semaine en cours
+                            </div>
+                            <div class="calendar-grid d-none d-md-grid">
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Lun</div>
+                                    <div class="calendar-day-body text-muted small">Aucune réservation</div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Mar</div>
+                                    <div class="calendar-day-body">
+                                        <span class="badge bg-primary">B201 • 10h–12h</span>
+                                        <div class="small text-muted">Révisions .NET</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Mer</div>
+                                    <div class="calendar-day-body text-muted small">Libre</div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Jeu</div>
+                                    <div class="calendar-day-body">
+                                        <span class="badge bg-success">Lab 3 • 14h–16h</span>
+                                        <div class="small text-muted">Projet PFE</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="calendar-day-name">Ven</div>
+                                    <div class="calendar-day-body text-muted small">Libre</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="h5 mb-3">Prochaines réservations</h3>
+                        <div class="list-group small">
+                            <div class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-semibold">Salle B201 – Révisions .NET</div>
+                                    <div class="text-muted">Mardi • 10:00–12:00</div>
+                                </div>
+                                <span class="badge bg-primary rounded-pill align-self-center">Cette semaine</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-semibold">Lab 3 – Projet PFE</div>
+                                    <div class="text-muted">Jeudi • 14:00–16:00</div>
+                                </div>
+                                <span class="badge bg-success rounded-pill align-self-center">Confirmé</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

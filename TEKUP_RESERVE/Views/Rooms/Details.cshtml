@@ -1,0 +1,32 @@
+﻿@model TEKUP_RESERVE.Models.Room
+
+@{
+    ViewData["Title"] = "Détails de la salle";
+}
+
+<h1>Détails de la salle</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nom</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+
+        <dt class="col-sm-2">Type</dt>
+        <dd class="col-sm-10">@Model.Type</dd>
+
+        <dt class="col-sm-2">Capacité</dt>
+        <dd class="col-sm-10">@Model.Capacity</dd>
+
+        <dt class="col-sm-2">PC</dt>
+        <dd class="col-sm-10">@((Model.HasComputers) ? "Oui" : "Non")</dd>
+
+        <dt class="col-sm-2">Projecteur</dt>
+        <dd class="col-sm-10">@((Model.HasProjector) ? "Oui" : "Non")</dd>
+
+        <dt class="col-sm-2">Audio</dt>
+        <dd class="col-sm-10">@((Model.HasAudioSystem) ? "Oui" : "Non")</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

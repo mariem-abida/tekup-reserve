@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\teacher\\help.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\teacher\\help.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\teacher\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\teacher\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\teacher\\reservations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\teacher\\reservations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\teacher\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\teacher\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\teacher\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\teacher\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\student\\help.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\student\\help.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\student\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\student\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\student\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\student\\calendar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|c:\\users\\marie\\onedrive\\desktop\\.net\\tekup_reserve\\tekup_reserve\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633CD0FB-90ED-4189-80A9-F978D530A51C}|TEKUP_RESERVE\\TEKUP_RESERVE.csproj|solutionrelative:tekup_reserve\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 594,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "TEKUP_RESERVE\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAHsCAAAAAAAAAAAAAG8CAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-05T20:55:48.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAIwJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:51:37.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Help.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Help.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Teacher\\Help.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Help.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Teacher\\Help.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAowFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:51:14.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Notifications.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Notifications.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Teacher\\Notifications.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Notifications.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Teacher\\Notifications.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAowFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:50:50.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Reservations.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Reservations.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Teacher\\Reservations.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Reservations.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Teacher\\Reservations.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:50:26.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Calendar.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Calendar.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Teacher\\Calendar.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Calendar.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Teacher\\Calendar.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAQwHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:49:55.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Teacher\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Teacher\\Dashboard.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Teacher\\Dashboard.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAowIIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:49:28.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "TEKUP_RESERVE\\Controllers\\TeacherController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T20:48:39.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Help.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Help.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Student\\Help.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Help.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Student\\Help.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAqwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:19:53.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Notifications.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Notifications.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Student\\Notifications.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Notifications.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Student\\Notifications.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:19:34.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Calendar.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Calendar.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Student\\Calendar.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Student\\Calendar.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Student\\Calendar.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-05T20:19:07.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "TEKUP_RESERVE\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T20:17:53.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TEKUP_RESERVE\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\marie\\OneDrive\\Desktop\\.NET\\TEKUP_RESERVE\\TEKUP_RESERVE\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TEKUP_RESERVE\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAowAkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T14:36:19.439Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 202,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

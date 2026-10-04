@@ -1,0 +1,31 @@
+﻿@model TEKUP_RESERVE.Models.Booking
+
+@{
+    ViewData["Title"] = "Supprimer la réservation";
+}
+
+<h1>Supprimer la réservation</h1>
+
+<h3>Es-tu sûre de vouloir supprimer cette réservation ?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Salle</dt>
+        <dd class="col-sm-10">@Model.Room?.Name</dd>
+
+        <dt class="col-sm-2">Motif</dt>
+        <dd class="col-sm-10">@Model.Purpose</dd>
+
+        <dt class="col-sm-2">Début</dt>
+        <dd class="col-sm-10">@Model.StartTime</dd>
+
+        <dt class="col-sm-2">Fin</dt>
+        <dd class="col-sm-10">@Model.EndTime</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

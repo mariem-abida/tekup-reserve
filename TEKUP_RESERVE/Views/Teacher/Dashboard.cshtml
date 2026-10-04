@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Espace enseignant";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Enseignant";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout teacher-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR ENSEIGNANT -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                        <span class="badge bg-info text-dark mt-2">Enseignant</span>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Teacher" asp-action="Dashboard"
+                           class="nav-link active">
+                            <span class="student-nav-icon">🎓</span>
+                            Tableau de bord
+                        </a>
+
+                        <a asp-controller="Teacher" asp-action="Calendar"
+                           class="nav-link">
+                            <span class="student-nav-icon">📅</span>
+                            Planning des cours
+                        </a>
+
+                        <a asp-controller="Teacher" asp-action="Reservations"
+                           class="nav-link">
+                            <span class="student-nav-icon">🏫</span>
+                            Mes réservations de salles
+                        </a>
+
+                        <a asp-controller="Teacher" asp-action="Notifications"
+                           class="nav-link">
+                            <span class="student-nav-icon">🔔</span>
+                            Notifications
+                        </a>
+
+                        <a asp-controller="Teacher" asp-action="Help"
+                           class="nav-link">
+                            <span class="student-nav-icon">❓</span>
+                            Ressources & aide
+                        </a>
+                    </nav>
+
+                </div>
+            </div>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="teacher-banner">
+                            <div class="teacher-banner-icon">
+                                🎓
+                            </div>
+                            <div>
+                                <div class="small text-uppercase fw-semibold" style="letter-spacing: .12em;">
+                                    Mode enseignant
+                                </div>
+                                <div class="small">
+                                    Vous voyez ici vos outils dédiés : planning des cours, réservations de salles,
+                                    notifications et ressources pédagogiques.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="student-dashboard-header mb-4">
+                            <h1 class="mb-2">Tableau de bord enseignant</h1>
+                            <p class="mb-1">
+                                Bonjour, <strong>@userName</strong> 👋
+                            </p>
+                            <p class="text-muted mb-0">
+                                Planifiez vos cours, gérez vos réservations de salles et
+                                suivez les demandes de vos étudiants.
+                            </p>
+                        </div>
+
+                        <!-- 3 cartes principales -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <div class="dashboard-card h-100">
+                                    <h5 class="dashboard-card-title">Planifier un cours</h5>
+                                    <p class="dashboard-card-text">
+                                        Réservez rapidement une salle pour votre prochain cours ou TD.
+                                    </p>
+                                    <a asp-controller="Bookings" asp-action="Create"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Nouvelle réservation
+                                    </a>
+                                </div>
+                            </div>
+                            <h2 class="h5 mb-3 mt-2">Mes cours suivis cette année</h2>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-4">
+                                    <div class="teacher-course-card">
+                                        <div class="teacher-course-card-title">C# & Programmation .NET</div>
+                                        <div class="small text-muted mb-1">L2 Développement</div>
+                                        <span class="teacher-course-badge">3 groupes • 4h / semaine</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="teacher-course-card">
+                                        <div class="teacher-course-card-title">Bases de données</div>
+                                        <div class="small text-muted mb-1">L3 Systèmes d’Information</div>
+                                        <span class="teacher-course-badge">2 groupes • 3h / semaine</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="teacher-course-card">
+                                        <div class="teacher-course-card-title">Encadrement PFE</div>
+                                        <div class="small text-muted mb-1">Mastère / Licence</div>
+                                        <span class="teacher-course-badge">5 projets encadrés</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="dashboard-card h-100">
+                                    <h5 class="dashboard-card-title">Cours de la semaine</h5>
+                                    <p class="dashboard-card-text">
+                                        Visualisez vos séances planifiées par jour et par salle.
+                                    </p>
+                                    <a asp-controller="Teacher" asp-action="Calendar"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Voir le planning
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="dashboard-card h-100">
+                                    <h5 class="dashboard-card-title">Demandes étudiants</h5>
+                                    <p class="dashboard-card-text">
+                                        Suivez les changements demandés (déplacement de cours, examens…).
+                                    </p>
+                                    <a asp-controller="Teacher" asp-action="Notifications"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Consulter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats rapides -->
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="small-stat-card">
+                                    <div class="small text-muted">Cours cette semaine</div>
+                                    <div class="h5 mb-0">5</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="small-stat-card">
+                                    <div class="small text-muted">Salles réservées</div>
+                                    <div class="h5 mb-0">3 salles</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="small-stat-card">
+                                    <div class="small text-muted">Demandes en attente</div>
+                                    <div class="h5 mb-0">2</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

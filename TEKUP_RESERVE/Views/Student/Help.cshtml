@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Infos & aide";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Utilisateur";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">
+                            <span class="student-nav-icon">🏠</span> Tableau de bord
+                        </a>
+                        <a asp-controller="Student" asp-action="Calendar" class="nav-link">
+                            <span class="student-nav-icon">📅</span> Calendrier
+                        </a>
+                        <a asp-controller="Student" asp-action="Notifications" class="nav-link">
+                            <span class="student-nav-icon">🔔</span> Notifications
+                        </a>
+                        <a asp-controller="Student" asp-action="Help" class="nav-link active">
+                            <span class="student-nav-icon">❓</span> Infos & aide
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Infos & aide</h1>
+                        <p class="text-muted mb-3">
+                            Quelques rappels pour bien utiliser TEKUP RESERVE et les salles du campus.
+                        </p>
+
+                        <div class="dashboard-card mb-3">
+                            <h5 class="dashboard-card-title">Règles d’utilisation des salles</h5>
+                            <ul class="small mb-0">
+                                <li>Arriver à l’heure pour ne pas bloquer les autres groupes.</li>
+                                <li>Ne pas déplacer le matériel sans autorisation.</li>
+                                <li>Laisser la salle propre et remettre les tables en place.</li>
+                            </ul>
+                        </div>
+
+                        <div class="dashboard-card mb-3">
+                            <h5 class="dashboard-card-title">Besoin d’aide ?</h5>
+                            <p class="dashboard-card-text">
+                                Pour tout problème technique ou de réservation, vous pouvez contacter :
+                            </p>
+                            <ul class="small mb-2">
+                                <li><strong>Responsable scolarité :</strong> scolarite@tekup.tn</li>
+                                <li><strong>Support technique :</strong> support@tekup.tn</li>
+                            </ul>
+                            <a href="mailto:support@tekup.tn" class="btn btn-sm btn-outline-primary">
+                                Écrire au support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

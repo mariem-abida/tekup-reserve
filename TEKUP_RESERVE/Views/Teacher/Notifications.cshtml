@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Notifications enseignant";
+
+    var userName = User.Identity?.Name;
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        userName = "Enseignant";
+    }
+    var initial = userName[0].ToString().ToUpper();
+}
+
+<section class="student-layout">
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-3">
+                <div class="student-sidebar">
+                    <div class="student-sidebar-header mb-3">
+                        <div class="student-avatar mb-2">@initial</div>
+                        <div class="small text-muted">Connecté(e)</div>
+                        <div class="fw-semibold">@userName</div>
+                        <span class="badge bg-info text-dark mt-2">Enseignant</span>
+                    </div>
+
+                    <nav class="student-nav flex-column nav-pills">
+                        <a asp-controller="Teacher" asp-action="Dashboard" class="nav-link">
+                            <span class="student-nav-icon">🎓</span> Tableau de bord
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Calendar" class="nav-link">
+                            <span class="student-nav-icon">📅</span> Planning des cours
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Reservations" class="nav-link">
+                            <span class="student-nav-icon">🏫</span> Mes réservations
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Notifications" class="nav-link active">
+                            <span class="student-nav-icon">🔔</span> Notifications
+                        </a>
+                        <a asp-controller="Teacher" asp-action="Help" class="nav-link">
+                            <span class="student-nav-icon">❓</span> Ressources & aide
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENU -->
+            <div class="col-lg-9">
+                <div class="student-main card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Notifications</h1>
+                        <p class="text-muted mb-3">
+                            Retrouvez ici les notifications liées à vos cours et à vos réservations.
+                        </p>
+
+                        <div class="card p-3 shadow-sm mb-3 small">
+                            <strong>Demande d’étudiant</strong>
+                            <p class="mb-1">
+                                L’étudiant <strong>Ali Ben Salah</strong> demande de déplacer le cours de C#
+                                du lundi 08h vers 10h.
+                            </p>
+                            <span class="text-muted">Reçu aujourd’hui à 09:15</span>
+                        </div>
+
+                        <div class="card p-3 shadow-sm mb-3 small">
+                            <strong>Changement de salle</strong>
+                            <p class="mb-1">
+                                Votre séance <strong>.NET – PFE</strong> de mercredi 14h a été déplacée
+                                de Lab 2 vers <strong>Lab 3</strong>.
+                            </p>
+                            <span class="text-muted">Reçu hier à 17:40</span>
+                        </div>
+
+                        <div class="card p-3 shadow-sm mb-3 small">
+                            <strong>Rappel d’examen</strong>
+                            <p class="mb-1">
+                                Examen de <strong>Bases de données</strong> prévu vendredi à 09h en salle A105.
+                            </p>
+                            <span class="text-muted">Reçu il y a 2 jours</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

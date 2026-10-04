@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TEKUP_RESERVE.Models.Room>
+
+@{
+    ViewData["Title"] = "Liste des salles";
+}
+
+<h1>Liste des salles</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">+ Ajouter une salle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Capacité</th>
+            <th>PC</th>
+            <th>Projecteur</th>
+            <th>Audio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Type</td>
+                <td>@item.Capacity</td>
+                <td>@(item.HasComputers ? "Oui" : "Non")</td>
+                <td>@(item.HasProjector ? "Oui" : "Non")</td>
+                <td>@(item.HasAudioSystem ? "Oui" : "Non")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,265 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+
+    var isAdmin = User.IsInRole("Admin");
+    var isTeacher = User.IsInRole("Teacher");
+    var isStudent = User.IsInRole("Student");
+
+    // Sécuriser l'accès à l'utilisateur
+    var isAuthenticated = User?.Identity?.IsAuthenticated ?? false;
+    var rawName = User?.Identity?.Name;
+    var userName = string.IsNullOrWhiteSpace(rawName) ? "Utilisateur" : rawName;
+    var userInitial = userName[0].ToString().ToUpper();
+}
+
+@if (!isAuthenticated)
+{
+    <!-- HERO pour visiteur non connecté -->
+    <section class="hero-home d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+
+                    <div class="hero-main-card text-center">
+
+                        <div class="hero-logo mb-3">
+                            <img src="~/images/tekup-logo.png" alt="TEK-UP University" />
+                        </div>
+
+                        <h1 class="hero-title mb-2">
+                            <span class="hero-title-main">TEKUP</span>
+                            <span class="hero-title-accent">RESERVE</span>
+                        </h1>
+
+                        <p class="hero-subtitle mb-4">
+                            La plateforme officielle de réservation des salles de TEK-UP :
+                            cours, examens, soutenances et événements en quelques clics.
+                        </p>
+
+                        <a class="btn btn-hero mb-3" asp-controller="Account" asp-action="Login">
+                            Accéder à la plateforme
+                        </a>
+
+                        <div class="hero-infos">
+                            <span>✔ Étudiants & Enseignants</span>
+                            <span>✔ Planning clair</span>
+                            <span>✔ Réservation rapide</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    if (isAdmin)
+    {
+        <!-- DASHBOARD ADMIN SIMPLE -->
+        <div class="container py-5">
+            <h1 class="mb-3">Tableau de bord administrateur</h1>
+
+            <p class="mb-2">
+                Bonjour, <strong>@userName</strong> 👋
+            </p>
+
+            <span class="badge bg-warning text-dark mb-4">Administrateur</span>
+
+            <p class="mb-4">
+                Accédez à la gestion des salles, des réservations et des utilisateurs.
+            </p>
+
+            <a class="btn btn-primary me-2" asp-controller="Admin" asp-action="Dashboard">
+                Ouvrir le dashboard
+            </a>
+            <a class="btn btn-outline-primary" asp-controller="Bookings" asp-action="Index">
+                Gérer les réservations
+            </a>
+        </div>
+    }
+    else
+    {
+        <!-- LAYOUT AVEC SIDEBAR POUR ÉTUDIANT / ENSEIGNANT -->
+        <section class="student-layout @(isTeacher ? "teacher-layout" : "")">
+            <div class="container-fluid py-4">
+                <div class="row g-4">
+
+                    <!-- SIDEBAR -->
+                    <div class="col-lg-3">
+                        <div class="student-sidebar">
+
+                            <div class="student-sidebar-header mb-3">
+                                <div class="student-avatar mb-2">
+                                    @userInitial
+                                </div>
+                                <div class="small text-muted">Connecté(e)</div>
+                                <div class="fw-semibold">@userName</div>
+
+                                @if (isStudent)
+                                {
+                                    <span class="badge bg-success mt-2">Étudiant</span>
+                                }
+                                else if (isTeacher)
+                                {
+                                    <span class="badge bg-info text-dark mt-2">Enseignant</span>
+                                }
+                            </div>
+
+                            <!-- Liens MVC vers les différentes pages -->
+                            <nav class="student-nav flex-column nav-pills">
+                                <a asp-controller="Home" asp-action="Index"
+                                   class="nav-link active">
+                                    <span class="student-nav-icon">🏠</span>
+                                    Tableau de bord
+                                </a>
+
+                                <a asp-controller="Student" asp-action="Calendar"
+                                   class="nav-link">
+                                    <span class="student-nav-icon">📅</span>
+                                    Calendrier
+                                </a>
+
+                                <a asp-controller="Student" asp-action="Notifications"
+                                   class="nav-link">
+                                    <span class="student-nav-icon">🔔</span>
+                                    Notifications
+                                </a>
+
+                                <a asp-controller="Student" asp-action="Help"
+                                   class="nav-link">
+                                    <span class="student-nav-icon">❓</span>
+                                    Infos & aide
+                                </a>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTENU PRINCIPAL : tableau de bord -->
+                    <div class="col-lg-9">
+                        <div class="student-main card border-0 shadow-sm">
+                            <div class="card-body">
+
+                                @* Bandeau spécial pour ENSEIGNANT *@
+                                @if (isTeacher)
+                                {
+                                    <div class="teacher-banner mb-3">
+                                        <div class="teacher-banner-icon">
+                                            🎓
+                                        </div>
+                                        <div>
+                                            <div class="small text-uppercase fw-semibold" style="letter-spacing: .12em;">
+                                                Espace enseignant
+                                            </div>
+                                            <div class="small">
+                                                Gérez vos cours, vos réservations de salles et suivez vos créneaux
+                                                d’examens en un seul endroit.
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                <div class="student-dashboard-header mb-4">
+                                    <h1 class="mb-2">Accueil TEKUP RESERVE</h1>
+
+                                    <p class="mb-1">
+                                        Bonjour, <strong>@userName</strong> 👋
+                                    </p>
+
+                                    <p class="text-muted">
+                                        Accédez rapidement à vos réservations, créez de nouveaux créneaux
+                                        et consultez les informations utiles pour l’utilisation des salles à TEK-UP.
+                                    </p>
+                                </div>
+
+                                <!-- Deux cartes principales -->
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="dashboard-card h-100">
+                                            <h5 class="dashboard-card-title">Réserver une salle</h5>
+                                            <p class="dashboard-card-text">
+                                                Choisissez la salle, la date et l’horaire pour vos cours, révisions
+                                                ou travaux de groupe.
+                                            </p>
+                                            <a asp-controller="Bookings" asp-action="Create"
+                                               class="btn btn-sm btn-outline-primary">
+                                                Nouvelle réservation
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="dashboard-card h-100">
+                                            <h5 class="dashboard-card-title">Mes réservations</h5>
+                                            <p class="dashboard-card-text">
+                                                Consultez vos réservations à venir, modifiez-les ou annulez-les si nécessaire.
+                                            </p>
+                                            <a asp-controller="Bookings" asp-action="Index"
+                                               class="btn btn-sm btn-outline-primary">
+                                                Voir mes réservations
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Petit résumé visuel -->
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="small-stat-card">
+                                            <div class="small text-muted">Réservations à venir</div>
+                                            <div class="h5 mb-0">3</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="small-stat-card">
+                                            <div class="small text-muted">Heures réservées ce mois</div>
+                                            <div class="h5 mb-0">8 h</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="small-stat-card">
+                                            <div class="small text-muted">Dernière salle utilisée</div>
+                                            <div class="h6 mb-0">Salle B201</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @* Section supplémentaire UNIQUEMENT pour ENSEIGNANT *@
+                                @if (isTeacher)
+                                {
+                                    <h2 class="h5 mb-3">Mes cours du semestre</h2>
+                                    <div class="row g-3 mb-2">
+                                        <div class="col-md-4">
+                                            <div class="teacher-course-card">
+                                                <div class="teacher-course-card-title">C# & .NET</div>
+                                                <div class="small text-muted mb-1">L2 Développement</div>
+                                                <span class="teacher-course-badge">3 groupes • 4h / semaine</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="teacher-course-card">
+                                                <div class="teacher-course-card-title">Bases de données</div>
+                                                <div class="small text-muted mb-1">L3 SI</div>
+                                                <span class="teacher-course-badge">2 groupes • 3h / semaine</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="teacher-course-card">
+                                                <div class="teacher-course-card-title">Encadrement PFE</div>
+                                                <div class="small text-muted mb-1">Licence / Mastère</div>
+                                                <span class="teacher-course-badge">5 projets encadrés</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div> <!-- /card-body -->
+                        </div> <!-- /student-main -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    }
+}
